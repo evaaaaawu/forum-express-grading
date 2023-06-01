@@ -19,7 +19,7 @@
   <div class="card-body">
     {{#each comments}}
     <a href="/restaurants/{{this.Restaurant.id}}" class="me-2" style="text-decoration:none;">
-      <img class="rounded" style="height: 100px; width: 100px;" src="{{this.Restaurant.image}}"
+      <img style="height: 100px; width: 100px;" class="mt-2" src="{{this.Restaurant.image}}"
         alt="{{this.Restaurant.name}}">
     </a>
     {{/each}}

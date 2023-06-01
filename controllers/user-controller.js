@@ -44,13 +44,13 @@ const userController = {
       Comment.findAll({
         where: { userId: req.params.id },
         include: Restaurant,
-        // attributes: ['restaurant_id'],
-        // group: 'restaurant_id',
+        attributes: ['restaurantId'],
+        group: 'restaurantId',
         nest: true,
         raw: true
       })
     ])
-      .then(([comments, user]) => {
+      .then(([user, comments]) => {
         if (!user) throw new Error("User didn't exist!")
         return res.render('users/profile', {
           user: getUser(req),
